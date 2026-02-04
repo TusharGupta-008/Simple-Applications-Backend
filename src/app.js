@@ -1,24 +1,22 @@
-const express = require('express');
+const express = require("express");
 
 const app = express();
-app.use(express.json())
+app.use(express.json());
 const notes = [];
 
-app.post('/notes',(req,res)=>{
+app.post("/notes", (req, res) => {
   notes.push(req.body);
 
   res.status(201).json({
-    message:"notes created sucess"
-  })
-})
+    message: "notes created sucess",
+  });
+});
 
-app.get('/notes',(req,res)=>{
+app.get("/notes", (req, res) => {
   res.status(200).json({
-    notes:notes
-  })
-
-
-})
+    notes: notes,
+  });
+});
 
 app.delete('/notes/:index',(req,res)=>{
   const number = req.params.index;
@@ -28,15 +26,17 @@ app.delete('/notes/:index',(req,res)=>{
   res.status(200).json({
     message:"notes deleted succesfully"
   })
-
-  
-
-  
 })
 
+app.patch("/notes/:index", (req, res) => {
+  const number = req.params.index;
+  const content = req.body.description;
 
+  notes[number].description = content;
 
-
+  res.status(200).json({
+    message: "note updated succesfully",
+  });
+});
 
 module.exports = app;
-
