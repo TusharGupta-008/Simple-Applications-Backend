@@ -19,15 +19,15 @@ app.get("/notes", (req, res) => {
   });
 });
 
-// app.delete('/notes/:index',(req,res)=>{
-//   const number = req.params.index;
+app.delete('/notes/:index',(req,res)=>{
+  const number = req.params.index;
 
-//   delete notes[number];
+  delete notes[number];
 
-//   res.status(200).json({
-//     message:"notes deleted succesfully"
-//   })
-// })
+  res.status(200).json({
+    message:"notes deleted succesfully"
+  })
+})
 
 // app.patch("/notes/:index", (req, res) => {
 //   const number = req.params.index;
