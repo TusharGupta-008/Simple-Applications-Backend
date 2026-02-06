@@ -13,11 +13,11 @@ app.post("/notes", (req, res) => {
   });
 });
 
-// app.get("/notes", (req, res) => {
-//   res.status(200).json({
-//     notes: notes,
-//   });
-// });
+app.get("/notes", (req, res) => {
+  res.status(200).json({
+    notes: notes,
+  });
+});
 
 // app.delete('/notes/:index',(req,res)=>{
 //   const number = req.params.index;
