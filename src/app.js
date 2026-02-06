@@ -29,15 +29,15 @@ app.delete('/notes/:index',(req,res)=>{
   })
 })
 
-// app.patch("/notes/:index", (req, res) => {
-//   const number = req.params.index;
-//   const content = req.body.description;
+app.patch("/notes/:index", (req, res) => {
+  const number = req.params.index;
+  const content = req.body.description;
 
-//   notes[number].description = content;
+  notes[number].description = content;
 
-//   res.status(200).json({
-//     message: "note updated succesfully",
-//   });
-// });
+  res.status(200).json({
+    message: "note updated succesfully",
+  });
+});
 
 module.exports = app;
