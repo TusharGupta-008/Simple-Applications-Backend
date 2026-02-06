@@ -5,13 +5,13 @@ const app = express();
 // app.use(express.json());
 // const notes = [];
 
-// app.post("/notes", (req, res) => {
-//   notes.push(req.body);
+app.post("/notes", (req, res) => {
+  notes.push(req.body);
 
-//   res.status(201).json({
-//     message: "notes created sucess",
-//   });
-// });
+  res.status(201).json({
+    message: "notes created sucess",
+  });
+});
 
 // app.get("/notes", (req, res) => {
 //   res.status(200).json({
